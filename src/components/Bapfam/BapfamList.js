@@ -12,7 +12,7 @@ const BapfamList = ({sortBy = 'CREATED_AT_ASC', limit = 4, ...props}) => {
                 <Loading/>
             ) : (
                 bapfams.map((data, index) =>
-                    <div key={index} className="col-6 col-lg-3">
+                    <div key={index} className="col-6 col-lg-3 mb-3">
                         <Bapfam key={index} {...data}/>
                     </div>)
             )}

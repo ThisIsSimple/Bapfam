@@ -20178,10 +20178,6 @@ h3 {
   object-fit: cover;
 }
 
-.male {
-  border: 3px solid #ff0000;
-}
-
 .jumbotron.main-jumbotron {
   height: 250px;
 }
@@ -20200,10 +20196,11 @@ h3 {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-.container.notification-container {
-  min-height: 100vh;
+.container.sub-container {
+  min-height: calc(100vh - 61px - 56px);
+  background-color: #fff;
 }
-.container.notification-container .btn {
+.container.sub-container .btn {
   width: 100px;
 }
 
@@ -20262,7 +20259,7 @@ h3 {
 }
 
 .footer {
-  background-color: #2d1a50;
+  background-color: #6f42c1;
   color: #fff !important;
   margin-bottom: 60px;
 }

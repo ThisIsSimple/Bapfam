@@ -2,7 +2,7 @@ import React from "react";
 
 const Notification = () => {
     return (
-        <section className="notification-container container d-flex justify-content-center align-items-start">
+        <section className="sub-container container d-flex justify-content-center align-items-start">
             <div style={{width: "100%"}}>
                 <header id="notification-header" className="page-header header">
                     <h3 className="font-weight-bold">알림</h3>

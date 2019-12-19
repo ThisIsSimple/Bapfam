@@ -13,15 +13,25 @@ class Login extends React.Component {
 		e.preventDefault();
 		const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 		firebase.auth().signInWithPopup(facebookAuthProvider).then(r => {
-			console.log(r);
-			console.log(r.user.displayName);
-			// window.location.href = '/';
+			firebase.firestore().doc(`/users/${r.user.uid}`).set({
+				name: r.user.displayName,
+				profile: r.user.photoURL,
+				email: r.user.email,
+				isKHU: false,
+				favoriteFoods: [],
+				dislikeFoods: [],
+				hakbon: '',
+				major: '',
+				KHUEmail: '',
+			}).then(() => {
+				this.props.history.replace('/');
+			});
 		});
-	}
+	};
 
 	render() {
 		return (
-			<section className="container d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+			<section className="container d-flex justify-content-center align-items-center bg-light-purple" style={{ height: '100vh' }}>
 				<div style={{ width: '100%' }}>
 					<header className="d-flex flex-column align-items-center mb-3">
 						<img src={logo} className="mb-4" style={{ width: 100 }} />

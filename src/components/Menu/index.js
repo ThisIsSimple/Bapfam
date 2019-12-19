@@ -7,7 +7,7 @@ const Menu = () => {
         window.location.href='/login';
     }
     return (
-        <section className="notification-container container d-flex justify-content-center align-items-start">
+        <section className="sub-container container d-flex justify-content-center align-items-start">
             <div style={{width: "100%"}}>
                 <header id="notification-header" className="page-header header">
                     <h3 className="font-weight-bold">메뉴</h3>

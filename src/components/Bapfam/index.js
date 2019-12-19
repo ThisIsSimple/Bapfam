@@ -10,11 +10,11 @@ function Bapfam({id, title, location, time, participants, image, max}) {
                 <div className="d-flex justify-content-between align-items-center">
                     <p className="card-text mb-0">
                         <i className="fas fa-user mr-1"/>
-                        /{max}
+                        {participants.length + 1}/{max}
                     </p>
                     <p className="card-text">
                         <i className="fas fa-clock mr-1"/>
-                        {/*{time.second}*/}
+                        {/*{time}*/}
                     </p>
                 </div>
                 <div>

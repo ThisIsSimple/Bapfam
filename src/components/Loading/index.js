@@ -4,7 +4,7 @@ import { SquareLoader } from 'react-spinners';
 
 function Loading() {
     return (
-        <div className="text-center" style={{ width: '100%' }}>
+        <div className="text-center pt-3 pb-5" style={{ width: '100%' }}>
             <SquareLoader
                 sizeUnit={"px"}
                 size={35}

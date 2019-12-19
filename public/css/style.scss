@@ -1,0 +1,204 @@
+/* custom.scss */
+
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap');
+
+/* import the necessary Bootstrap files */
+// @import "../scss/functions";
+// @import "../scss/variables";
+@import "../scss/bootstrap";
+
+/* -------begin customization-------- */
+
+/* simply assign the value */
+// $body-bg: lighten($purple, 30%);
+
+/* or, use an existing variable */
+$classic_blue: #1d4f89;
+//$primary: $classic_blue;
+$primary: $purple;
+$theme-colors: (primary: $purple, light-purple: lighten($purple, 30%), facebook: #4267b2);
+
+// Generate alert modifier classes
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    @include alert-variant(theme-color-level($color, -10), theme-color-level($color, -9), theme-color-level($color, 6));
+  }
+  .btn-#{$color} {
+    @include alert-variant(theme-color-level($color, -10), theme-color-level($color, -9), theme-color-level($color, 6));
+  }
+}
+
+// Generate `.bg-*` color utilities
+@each $color, $value in $theme-colors {
+  @include bg-variant('.bg-#{$color}', $value);
+}
+
+/* -------end customization-------- */
+
+/* finally, import Bootstrap to set the changes! */
+@import "../scss/bootstrap";
+
+* {
+  font-family: 'Spoqa Han Sans', sans-serif;
+}
+
+.logo {
+  font-family: 'Noto Serif KR', serif;
+}
+
+.form-control {
+  //border: none !important;
+}
+
+.card {
+  border: none !important;
+}
+
+$profile-img-size: 50px;
+.profile-img {
+  width: $profile-img-size;
+  height: $profile-img-size;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+$profile-img-lg-size: 70px;
+.profile-img-lg {
+  width: $profile-img-lg-size;
+  height: $profile-img-lg-size;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.jumbotron {
+  &.main-jumbotron {
+    height: 250px;
+  }
+
+  &.detail-jumbotron {
+    height: 350px;
+    color: #fff !important;
+  }
+
+  &.profile-jumbotron {
+    height: 250px;
+    color: #fff !important;
+  }
+}
+
+.container {
+  $main-container-border-radius: 30px;
+  &.main-container {
+    background-color: $white;
+    margin-top: -$main-container-border-radius;
+    border-top-left-radius: $main-container-border-radius;
+    border-top-right-radius: $main-container-border-radius;
+  }
+
+  &.sub-container {
+    min-height: calc(100vh - 61px - 56px);
+    background-color: #fff;
+    .btn {
+      width: 100px;
+    }
+  }
+}
+
+#search-header {
+  .form-group {
+    position: relative;
+    .form-control {
+      padding: 20px 20px;
+      border-radius: 100px;
+    }
+    i {
+      color: $purple;
+      position: absolute;
+      top: 12px;
+      right: 20px;
+    }
+  }
+}
+
+.header {
+  &.page-header {
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.section {
+  &.card-section {
+    .row {
+      padding-right: 1rem;
+      padding-left: 1rem;
+      [class*=col-] {
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
+      }
+    }
+  }
+}
+
+.food-card {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  .card-img-top {
+    height: 100px;
+    object-fit: cover;
+  }
+  .card-body {
+    padding: 15px;
+    .card-text {
+      font-size: 0.9rem;
+    }
+  }
+  .card-footer {
+    padding: 0;
+    border: none;
+    .join-btn {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      font-size: 0.9rem;
+      padding: 7px;
+    }
+  }
+}
+
+.footer {
+  // background-color: darken($primary, 30%);
+  background-color: $primary;
+  color: #fff !important;
+  margin-bottom: 60px;
+}
+
+#menu-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  .menu-item {
+    cursor: pointer;
+    color: #d0cecf;
+    padding: 15px 0;
+    font-size: 1.3rem;
+    &.active {
+      color: $primary;
+    }
+  }
+
+  $menu-plus-size: 60px;
+  .menu-plus {
+    background-color: $primary;
+    border-radius: 50%;
+    width: $menu-plus-size;
+    height: $menu-plus-size;
+    color: #fff;
+    font-size: 2.5rem !important;
+    position: relative;
+    top: -25px;
+  }
+}

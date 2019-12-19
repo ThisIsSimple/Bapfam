@@ -6,6 +6,10 @@ export const REGISTER = '/register';
 export const CREATE = '/bapfam/create';
 export const DETAIL = '/bapfam/:id';
 
+// Message
+export const MESSAGE = '/message';
+export const MESSAGE_DETAIL = '/message/:id';
+
 // Notification
 export const NOTIFICATION = '/notification';
 

@@ -3,6 +3,7 @@ import React from 'react';
 import firebase from 'firebase/app';
 
 import logo from '../../../logo.svg';
+import Sentence from "./Sentence";
 
 class Login extends React.Component {
 	constructor(props) {
@@ -23,6 +24,9 @@ class Login extends React.Component {
 				hakbon: '',
 				major: '',
 				KHUEmail: '',
+				about: '',
+				gender: '',
+
 			}).then(() => {
 				this.props.history.replace('/');
 			});
@@ -34,9 +38,9 @@ class Login extends React.Component {
 			<section className="container d-flex justify-content-center align-items-center bg-light-purple" style={{ height: '100vh' }}>
 				<div style={{ width: '100%' }}>
 					<header className="d-flex flex-column align-items-center mb-3">
-						<img src={logo} className="mb-4" style={{ width: 100 }} />
-						<h3 className="logo font-weight-bolder m-0">밥팸,</h3>
-						<p className="logo">우리들의 밥</p>
+						<img src={logo} className="mb-4" style={{ width: 175 }} />
+						<span className="logo"></span>
+						<Sentence/>
 					</header>
 					<form>
 						<div className="form-group">

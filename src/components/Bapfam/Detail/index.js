@@ -67,6 +67,8 @@ function Detail() {
                                 {(() => {
                                     if(firebase.auth().currentUser.uid === userId) {
                                         return (<button className="btn btn-primary btn-lg btn-block disabled">나의 밥팸</button>);
+                                    } else if (participants.includes(firebase.auth().currentUser.uid, 0)) {
+                                        return (<button className="btn btn-primary btn-lg btn-block disabled">이미 참여중</button>);
                                     } else if (participants.length + 1 >= max) {
                                         return (<button className="btn btn-primary btn-lg btn-block disabled">마감됨</button>);
                                     } else {

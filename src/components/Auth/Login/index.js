@@ -13,7 +13,7 @@ class Login extends React.Component {
 	loginWithFacebook = e => {
 		e.preventDefault();
 		const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-		firebase.auth().signInWithPopup(facebookAuthProvider).then(r => {
+		firebase.auth().signInWithRedirect(facebookAuthProvider).then(r => {
 			firebase.firestore().doc(`/users/${r.user.uid}`).set({
 				name: r.user.displayName,
 				profile: r.user.photoURL,

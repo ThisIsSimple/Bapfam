@@ -14,21 +14,23 @@ class Login extends React.Component {
 		e.preventDefault();
 		const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 		firebase.auth().signInWithRedirect(facebookAuthProvider).then(r => {
-			firebase.firestore().doc(`/users/${r.user.uid}`).set({
-				name: r.user.displayName,
-				profile: r.user.photoURL,
-				email: r.user.email,
-				isKHU: false,
-				favoriteFoods: [],
-				dislikeFoods: [],
-				hakbon: '',
-				major: '',
-				KHUEmail: '',
-				about: '',
-				gender: '',
-
-			}).then(() => {
-				this.props.history.replace('/');
+			firebase.firestore().doc(`/users/${r.user.uid}`).onSnapshot(snapshot => {
+				firebase.firestore().doc(`/users/${r.user.uid}`).set({
+					name: r.user.displayName,
+					profile: r.user.photoURL,
+					email: r.user.email,
+					isKHU: false,
+					favoriteFoods: [],
+					dislikeFoods: [],
+					hakbon: '',
+					major: '',
+					KHUEmail: '',
+					about: '',
+					gender: '',
+					...snapshot
+				}).then(() => {
+					this.props.history.replace('/');
+				});
 			});
 		});
 	};

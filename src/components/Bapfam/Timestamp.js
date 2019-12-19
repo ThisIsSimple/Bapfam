@@ -3,7 +3,12 @@ import React, {Fragment} from "react";
 const Timestamp = ({ time }) => {
     const now = new Date();
     const newTime = new Date(time);
-    const timeString = `${newTime.getHours()}:${newTime.getMinutes()}`;
+    const timeString = `${formatNumber(newTime.getHours())}:${formatNumber(newTime.getMinutes())}`;
+
+    function formatNumber(number) {
+        var formattedNumber = ("0" + number).slice(-2);
+        return formattedNumber;
+    }
 
     return (
         <Fragment>

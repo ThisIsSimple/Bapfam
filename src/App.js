@@ -39,11 +39,11 @@ function App(props) {
                                 <Route path={ROUTES.PROFILE} component={Profile}/>
                                 <Route path={ROUTES.MENU} component={Menu}/>
 
-                                <Route path={ROUTES.MESSAGE} component={Message}/>
-                                <Route path={ROUTES.MESSAGE_DETAIL} component={Message}/>
+                                <Route exact path={ROUTES.MESSAGE} component={Message}/>
+                                <Route exact path={ROUTES.MESSAGE_DETAIL} component={Message}/>
 
-                                <Route path={ROUTES.CREATE} component={Create}/>
                                 <Route path={ROUTES.DETAIL} component={Detail}/>
+                                <Route exact path={ROUTES.CREATE} component={Create}/>
                             </Fragment>
                         ) : (
                             <Redirect to='/login'/>

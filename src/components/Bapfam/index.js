@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import Timestamp from "./Timestamp";
 
 function Bapfam({id, title, location, time, participants, image, max}) {
     return (
@@ -14,7 +15,7 @@ function Bapfam({id, title, location, time, participants, image, max}) {
                     </p>
                     <p className="card-text">
                         <i className="fas fa-clock mr-1"/>
-                        {/*{time}*/}
+                        <Timestamp time={time}/>
                     </p>
                 </div>
                 <div>
@@ -25,7 +26,7 @@ function Bapfam({id, title, location, time, participants, image, max}) {
                 </div>
             </div>
             <div className="card-footer">
-                <Link to={`/bapfam/${id}`} className="join-btn btn btn-primary btn-block text-center">
+                <Link to={`/bapfam/detail/${id}`} className="join-btn btn btn-primary btn-block text-center">
                     참여하기
                 </Link>
             </div>

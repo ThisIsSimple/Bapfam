@@ -4,7 +4,7 @@ export const REGISTER = '/register';
 
 // Bapfam
 export const CREATE = '/bapfam/create';
-export const DETAIL = '/bapfam/:id';
+export const DETAIL = '/bapfam/detail/:id';
 
 // Message
 export const MESSAGE = '/message';

@@ -9,11 +9,11 @@ function Bapfam({id, title, location, time, participants, image, max}) {
             <div className="card-body">
                 <h5 className="card-title font-weight-bold text-truncate">{title}</h5>
                 <div className="d-flex justify-content-between align-items-center">
-                    <p className="card-text mb-0">
+                    <p className="card-text mb-0 text-truncate">
                         <i className="fas fa-user mr-1"/>
                         {participants.length + 1}/{max}
                     </p>
-                    <p className="card-text">
+                    <p className="card-text text-truncate">
                         <i className="fas fa-clock mr-1"/>
                         <Timestamp time={time}/>
                     </p>

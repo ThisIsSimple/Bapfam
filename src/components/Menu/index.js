@@ -14,8 +14,8 @@ const Menu = () => {
                 </header>
                 <hr className="m-0"/>
                 <div className="list-group list-group-flush border-bottom">
-                    <div className="list-group-item list-group-item-action">
-                        <button onClick={signOut}>로그아웃</button>
+                    <div className="list-group-item list-group-item-action" onClick={signOut}>
+                        로그아웃
                     </div>
                 </div>
             </div>

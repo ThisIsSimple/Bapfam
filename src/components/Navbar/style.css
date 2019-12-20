@@ -10,3 +10,7 @@ a:hover {
     z-index: 10000000;
     height: 56px !important;
 }
+
+#menu-nav {
+    z-index: 10000000;
+}

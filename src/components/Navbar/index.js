@@ -9,7 +9,7 @@ const Navbar = () => {
 
     return (
         <Fragment>
-            {(pathname !== '/login') ? (
+            {(pathname !== '/login' && !pathname.includes('/message/detail', 0)) ? (
                 <Fragment>
                     <div style={{height: '61px'}}></div>
                     <section id="menu-nav" className="bg-white shadow-lg d-flex justify-content-around">

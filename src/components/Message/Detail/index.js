@@ -33,9 +33,9 @@ const MessageDetail = () => {
     return (
         <section className="sub-container container d-flex justify-content-center align-items-start">
             <div style={{width: "100%"}}>
-                {(bapfam.loading)?(
+                {(bapfam.loading) ? (
                     <Loading/>
-                ):(
+                ) : (
                     <header id="notification-header" className="page-header header">
                         <h3 className="font-weight-bold text-truncate">{bapfam.bapfam.title}</h3>
                     </header>
@@ -57,22 +57,20 @@ const MessageDetail = () => {
                                         </div>
                                     ))
                                 })}
-                                <form onSubmit={handleSubmit}>
-                                    <div className="input-group mt-3">
-                                        <input type="text" className="form-control" placeholder="메세지를 입력하세요."
-                                               value={chat}
-                                               onChange={e => {
-                                                   setChat(e.currentTarget.value)
-                                               }}/>
-                                        <div className="input-group-append">
-                                            <button className="btn btn-primary" type="submit">전송</button>
-                                        </div>
-                                    </div>
-                                </form>
                             </Fragment>
                         )}
                     </div>
                 </div>
+                <form onSubmit={handleSubmit}>
+                    <div id="message-form" className="form-group pb-3 mb-0">
+                        <input type="text" className="form-control" placeholder="메세지를 입력하세요."
+                               value={chat}
+                               onChange={e => {
+                                   setChat(e.currentTarget.value)
+                               }}/>
+                        <button id="message-submit" className="btn btn-primary" type="submit"><i className="fas fa-arrow-up"></i></button>
+                    </div>
+                </form>
             </div>
         </section>
     );

@@ -1,5 +1,25 @@
 #chatroom-container {
-    height: calc(100vh - 260px);
+    height: calc(100vh - 54px - 56px - 105px);
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+#message-form {
+    position: relative;
+}
+
+#message-form .form-control {
+    border-radius: 50px;
+}
+
+#message-form #message-submit {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0;
 }
 
 #chatroom {

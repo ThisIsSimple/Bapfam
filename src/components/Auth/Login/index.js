@@ -11,6 +11,25 @@ const Login = () => {
 
 	useEffect(() => {
 		firebase.auth().onAuthStateChanged(user => {
+		    if(user) {
+		        console.log(user);
+		        // alert(user);
+                // firebase.firestore().doc(`/users/${user.uid}`).update({
+                //     name: user.displayName,
+                //     profile: user.photoURL,
+                //     email: user.email,
+                //     isKHU: false,
+                //     favoriteFoods: [],
+                //     dislikeFoods: [],
+                //     hakbon: '',
+                //     major: '',
+                //     KHUEmail: '',
+                //     about: '',
+                //     gender: '',
+                // }).catch(e => {
+                //
+                // })
+            }
 			if(!user) {
 				setLoading(false);
 			}
@@ -22,24 +41,6 @@ const Login = () => {
         const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
         firebase.auth().signInWithRedirect(facebookAuthProvider).then(r => {
         	setLoading(true);
-            firebase.firestore().doc(`/users/${r.user.uid}`).onSnapshot(snapshot => {
-                firebase.firestore().doc(`/users/${r.user.uid}`).set({
-                    name: r.user.displayName,
-                    profile: r.user.photoURL,
-                    email: r.user.email,
-                    isKHU: false,
-                    favoriteFoods: [],
-                    dislikeFoods: [],
-                    hakbon: '',
-                    major: '',
-                    KHUEmail: '',
-                    about: '',
-                    gender: '',
-                    ...snapshot
-                }).then(() => {
-                    this.props.history.replace('/');
-                });
-            });
         });
     };
 

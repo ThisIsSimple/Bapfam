@@ -3,14 +3,21 @@ a:hover {
     text-decoration: none;
 }
 
+#menu-nav {
+    z-index: 10000000;
+}
+
 #top-nav {
     position: fixed;
-    top: 0;
     width: 100%;
     z-index: 10000000;
     height: 56px !important;
 }
 
-#menu-nav {
-    z-index: 10000000;
+#top-nav::before {
+    background-color: #fff;
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    top: -56px;
 }

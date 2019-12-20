@@ -8,7 +8,7 @@ export const DETAIL = '/bapfam/detail/:id';
 
 // Message
 export const MESSAGE = '/message';
-export const MESSAGE_DETAIL = '/message/:id';
+export const MESSAGE_DETAIL = '/message/detail/:id';
 
 // Notification
 export const NOTIFICATION = '/notification';

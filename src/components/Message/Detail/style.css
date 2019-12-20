@@ -1,0 +1,13 @@
+#chatroom-container {
+    height: calc(100vh - 260px);
+}
+
+#chatroom {
+    width: 100%;
+}
+
+#chatroom .badge {
+    font-size: 1em !important;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+}

@@ -30,7 +30,8 @@ const Create = (props) => {
             .collection('/bapfams')
             .add({
                 ...data,
-                participants: [],
+                participants: [firebase.auth().currentUser.uid],
+                messages: [],
                 userId: firebase.auth().currentUser.uid,
                 createdAt: new Date()
             })

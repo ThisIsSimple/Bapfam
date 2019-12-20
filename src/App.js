@@ -15,6 +15,7 @@ import TopNav from "./components/Navbar/TopNav";
 import {FirebaseAuthConsumer, IfFirebaseAuthed} from "@react-firebase/auth";
 import NotFound from "./components/NotFound";
 import Navbar from "./components/Navbar";
+import MessageDetail from "./components/Message/Detail";
 
 function App(props) {
 
@@ -40,7 +41,7 @@ function App(props) {
                                 <Route path={ROUTES.MENU} component={Menu}/>
 
                                 <Route exact path={ROUTES.MESSAGE} component={Message}/>
-                                <Route exact path={ROUTES.MESSAGE_DETAIL} component={Message}/>
+                                <Route exact path={ROUTES.MESSAGE_DETAIL} component={MessageDetail}/>
 
                                 <Route path={ROUTES.DETAIL} component={Detail}/>
                                 <Route exact path={ROUTES.CREATE} component={Create}/>

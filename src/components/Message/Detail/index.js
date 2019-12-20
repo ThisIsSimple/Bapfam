@@ -65,8 +65,7 @@ const MessageDetail = () => {
                                                    setChat(e.currentTarget.value)
                                                }}/>
                                         <div className="input-group-append">
-                                            <button className="btn btn-primary" type="button" id="button-addon2">전송
-                                            </button>
+                                            <button className="btn btn-primary" type="submit">전송</button>
                                         </div>
                                     </div>
                                 </form>

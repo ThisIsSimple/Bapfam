@@ -60,6 +60,7 @@ const MessageDetail = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="input-group mt-3">
                                         <input type="text" className="form-control" placeholder="메세지를 입력하세요."
+                                               value={chat}
                                                onChange={e => {
                                                    setChat(e.currentTarget.value)
                                                }}/>

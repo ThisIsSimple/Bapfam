@@ -40,7 +40,7 @@ function Detail() {
                         <h1 className="display-5 font-weight-bold">{title}</h1>
                         <p className="mb-0">
                             <i className="fas fa-user mr-3"/>
-                            {participants.length + 1}/{max}
+                            {participants.length}/{max}
                         </p>
                         <p className="mb-0">
                             <i className="fas fa-clock mr-3"/>
